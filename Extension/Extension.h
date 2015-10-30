@@ -11,13 +11,10 @@
 #	define SAMPLE_EXTENSION_EXPORT
 #endif
 
-#define SH_EXTENSION_INITIALIZE		PluginInitialize
-#define SH_EXTENSION_RELEASE		PluginRelease
-
 extern "C"
 {
-	SAMPLE_EXTENSION_EXPORT void	SH_EXTENSION_INITIALIZE		(void);
-	SAMPLE_EXTENSION_EXPORT void	SH_EXTENSION_RELEASE		(void);
+	SAMPLE_EXTENSION_EXPORT void	ExtensionInitialize		(void);
+	SAMPLE_EXTENSION_EXPORT void	ExtensionRelease		(void);
 }
 
 #endif // __EXTENSION_H

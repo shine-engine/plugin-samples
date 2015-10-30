@@ -6,8 +6,7 @@ set(SH_ROOT_DIR "../Shine" CACHE PATH "Shine root directory")
 
 include_directories("${SH_ROOT_DIR}/include")
 
-find_library(SH_SDK_EDITOR_LIB_DEBUG "ShSDK_Editor_Debug" PATHS "${SH_ROOT_DIR}" PATH_SUFFIXES Lib lib NO_DEFAULT_PATH)
-find_library(SH_SDK_EDITOR_LIB_RELEASE "ShSDK_Editor_Release" PATHS "${SH_ROOT_DIR}" PATH_SUFFIXES Lib lib NO_DEFAULT_PATH)
+find_library(SH_SDK_EDITOR_LIB "ShSDK_Editor" PATHS "${SH_ROOT_DIR}" PATH_SUFFIXES Lib lib NO_DEFAULT_PATH)
 
 if (WIN32)
 	find_package(DirectX9 REQUIRED)
@@ -30,4 +29,4 @@ set_property(TARGET SampleExtension APPEND PROPERTY COMPILE_DEFINITIONS "SH_DEV=
 set_property(TARGET SampleExtension APPEND PROPERTY COMPILE_DEFINITIONS "SH_$<UPPER_CASE:$<CONFIG>>=1")
 set_property(TARGET SampleExtension APPEND PROPERTY COMPILE_DEFINITIONS "SH_EDITOR=1")
 set_property(TARGET SampleExtension APPEND PROPERTY COMPILE_DEFINITIONS "_INTERNAL_DLL")
-target_link_libraries(SampleExtension debug ${SH_SDK_EDITOR_LIB_DEBUG} optimized ${SH_SDK_EDITOR_LIB_RELEASE})
+target_link_libraries(SampleExtension ${SH_SDK_EDITOR_LIB})

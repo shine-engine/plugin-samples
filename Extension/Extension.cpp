@@ -11,7 +11,7 @@ static CShPluginTranslate plugin_translate("translate");
 extern "C"
 {
 
-SAMPLE_EXTENSION_EXPORT void SH_EXTENSION_INITIALIZE(void)
+SAMPLE_EXTENSION_EXPORT void ExtensionInitialize(void)
 {
 	// Initialize the Rotate Plugin
 	const CShIdentifier & topPoolIdentifier = CShPooledObjectManagerManager::GetInstance()->GetTopPoolIdentifier();
@@ -23,7 +23,7 @@ SAMPLE_EXTENSION_EXPORT void SH_EXTENSION_INITIALIZE(void)
 	ShApplication::RegisterPlugin(&plugin_translate);
 }
 
-SAMPLE_EXTENSION_EXPORT void SH_EXTENSION_RELEASE(void)
+SAMPLE_EXTENSION_EXPORT void ExtensionRelease(void)
 {
 	// Release the Rotate Plugin
 	plugin_rotate.Release();
