@@ -1,0 +1,9 @@
+<extension name="Sample Extension" identifier="SampleExtension">
+
+	<dependencies>
+	</dependencies>
+
+	<description>
+	</description>
+	
+</extension>
