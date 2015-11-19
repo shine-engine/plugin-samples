@@ -16,7 +16,7 @@ public:
 	};
 
 	// Constructor / Destructor
-								CShPluginTranslate				(const char * szName);
+								CShPluginTranslate			(void);
 	virtual						~CShPluginTranslate			(void);
 
 	bool						Initialize					(const CShIdentifier & identifier);

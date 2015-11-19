@@ -9,8 +9,8 @@ static CShIdentifier dataSetTranslateIdentifier("translation");
 /**
  * Constructor
  */
-CShPluginTranslate::CShPluginTranslate(const char * szName)
-: CShPlugin(CShIdentifier(szName))
+CShPluginTranslate::CShPluginTranslate(void)
+: CShPlugin(CShIdentifier("translate"))
 , m_levelIdentifier(GID(NULL))
 {
 
@@ -71,6 +71,10 @@ void CShPluginTranslate::OnPlayStart(void)
 			const CShIdentifier & dataSetIdentifier = ShDataSet::GetDataSetIdentifier(pDataSet);
 			if (dataSetIdentifier == dataSetTranslateIdentifier)
 			{
+				// check count
+				int count = ShDataSet::GetDataCount(pDataSet);
+				SH_ASSERT(1 == count);
+
 				// Get the velocity from the dataset
 				ShDataSet::GetDataValue(pDataSet, 0, elmt.velocity);
 

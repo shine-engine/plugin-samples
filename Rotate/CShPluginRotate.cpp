@@ -9,8 +9,8 @@ static CShIdentifier dataSetRotationIdentifier("rotation");
 /**
  * Constructor
  */
-CShPluginRotate::CShPluginRotate(const char * szName)
-: CShPlugin(CShIdentifier(szName))
+CShPluginRotate::CShPluginRotate(void)
+: CShPlugin(CShIdentifier("rotate"))
 , m_levelIdentifier(GID(NULL))
 {
 
@@ -71,6 +71,10 @@ void CShPluginRotate::OnPlayStart(void)
 			const CShIdentifier & dataSetIdentifier = ShDataSet::GetDataSetIdentifier(pDataSet);
 			if (dataSetIdentifier == dataSetRotationIdentifier)
 			{
+				// check count
+				int count = ShDataSet::GetDataCount(pDataSet);
+				SH_ASSERT(1 == count);
+
 				// Get the velocity from the dataset
 				ShDataSet::GetDataValue(pDataSet, 0, elmt.velocity);
 

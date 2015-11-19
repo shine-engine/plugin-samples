@@ -16,7 +16,7 @@ public:
 	};
 
 	// Constructor / Destructor
-								CShPluginRotate				(const char * szName);
+								CShPluginRotate				(void);
 	virtual						~CShPluginRotate			(void);
 
 	bool						Initialize					(const CShIdentifier & identifier);

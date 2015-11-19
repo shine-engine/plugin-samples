@@ -5,8 +5,8 @@
 #include "../Rotate/CShPluginRotate.h"
 #include "../Translate/CShPluginTranslate.h"
 
-static CShPluginRotate plugin_rotate("rotate");
-static CShPluginTranslate plugin_translate("translate");
+static CShPluginRotate plugin_rotate;
+static CShPluginTranslate plugin_translate;
 
 extern "C"
 {
